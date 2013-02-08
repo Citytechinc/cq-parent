@@ -13,6 +13,18 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
+	<distributionManagement>
+		<repository>
+			<id>citytech-releases</id>
+			<url>http://nexus.citytech.ctmsp.com/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>citytech-snapshots</id>
+			<url>http://nexus.citytech.ctmsp.com/content/repositories/snapshots</url>
+			<uniqueVersion>false</uniqueVersion>
+		</snapshotRepository>
+	</distributionManagement>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
