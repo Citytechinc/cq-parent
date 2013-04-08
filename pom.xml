@@ -7,8 +7,13 @@
     <artifactId>parent</artifactId>
     <version>5.6.0-SNAPSHOT</version>
     <packaging>pom</packaging>
+    <name>CITYTECH, Inc. CQ Parent</name>
+    <description>Parent POM for Adobe CQ projects.</description>
 
-    <name>parent</name>
+    <organization>
+        <name>CITYTECH, Inc.</name>
+        <url>http://www.citytechinc.com</url>
+    </organization>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
