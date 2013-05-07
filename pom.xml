@@ -1,14 +1,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
 
+    <modelVersion>4.0.0</modelVersion>
     <groupId>com.citytechinc.cq</groupId>
     <artifactId>parent</artifactId>
     <version>5.6.2-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>CITYTECH, Inc. CQ Parent</name>
     <description>Parent POM for Adobe CQ projects.</description>
+
+    <organization>
+        <name>CITYTECH, Inc.</name>
+        <url>http://www.citytechinc.com</url>
+    </organization>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -29,11 +34,11 @@
 
     <distributionManagement>
         <repository>
-            <id>citytech-releases</id>
+            <id>citytech-public-releases</id>
             <url>http://nexus.citytech.ctmsp.com/content/repositories/public-releases</url>
         </repository>
         <snapshotRepository>
-            <id>citytech-snapshots</id>
+            <id>citytech-public-snapshots</id>
             <url>http://nexus.citytech.ctmsp.com/content/repositories/public-snapshots</url>
             <uniqueVersion>false</uniqueVersion>
         </snapshotRepository>
