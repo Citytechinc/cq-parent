@@ -1,4 +1,4 @@
-# CQ Parent POM
+# CITYTECH, Inc. CQ Parent POM
 
 [CITYTECH, Inc.](http://www.citytechinc.com)
 

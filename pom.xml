@@ -7,7 +7,7 @@
     <artifactId>parent</artifactId>
     <version>5.6.3-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>CITYTECH, Inc. CQ Parent</name>
+    <name>CITYTECH, Inc. CQ Parent POM</name>
     <description>Parent POM for Adobe CQ projects that defines a dependency management section containing all of the
         available dependencies that are provided by the CQ5 OSGi container.
     </description>
@@ -16,6 +16,8 @@
         <name>CITYTECH, Inc.</name>
         <url>http://www.citytechinc.com</url>
     </organization>
+
+    <url>http://citytechinc.github.io/cq-parent</url>
 
     <licenses>
         <license>
