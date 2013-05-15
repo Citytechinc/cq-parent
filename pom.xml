@@ -8,7 +8,9 @@
     <version>5.6.3-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>CITYTECH, Inc. CQ Parent</name>
-    <description>Parent POM for Adobe CQ projects.</description>
+    <description>Parent POM for Adobe CQ projects that defines a dependency management section containing all of the
+        available dependencies that are provided by the CQ5 OSGi container.
+    </description>
 
     <organization>
         <name>CITYTECH, Inc.</name>
@@ -78,13 +80,13 @@
             <dependency>
                 <groupId>org.osgi</groupId>
                 <artifactId>org.osgi.core</artifactId>
-				<version>4.3.0</version>
+                <version>4.3.0</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.osgi</groupId>
                 <artifactId>org.osgi.compendium</artifactId>
-				<version>4.3.0</version>
+                <version>4.3.0</version>
                 <scope>provided</scope>
             </dependency>
             <!-- JCR -->
@@ -1832,4 +1834,38 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <!-- activate when deploying GitHub site -->
+        <profile>
+            <id>github-site</id>
+            <activation>
+                <property>
+                    <name>github-site</name>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.github.github</groupId>
+                        <artifactId>site-maven-plugin</artifactId>
+                        <version>0.8</version>
+                        <configuration>
+                            <message>site for ${project.version}</message>
+                            <server>github</server>
+                            <merge>true</merge>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>site</phase>
+                                <goals>
+                                    <goal>site</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
