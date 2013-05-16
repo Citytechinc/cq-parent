@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.citytechinc.cq</groupId>
     <artifactId>parent</artifactId>
-    <version>5.6.3-SNAPSHOT</version>
+    <version>5.6.3</version>
     <packaging>pom</packaging>
     <name>CITYTECH, Inc. CQ Parent POM</name>
     <description>Parent POM for Adobe CQ projects that defines a dependency management section containing all of the
