@@ -5,15 +5,27 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.citytechinc.cq</groupId>
     <artifactId>parent</artifactId>
-    <version>5.6.2</version>
+    <version>5.6.3</version>
     <packaging>pom</packaging>
-    <name>CITYTECH, Inc. CQ Parent</name>
-    <description>Parent POM for Adobe CQ projects.</description>
+    <name>CITYTECH, Inc. CQ Parent POM</name>
+    <description>Parent POM for Adobe CQ projects that defines a dependency management section containing all of the
+        available dependencies that are provided by the CQ5 OSGi container.
+    </description>
 
     <organization>
         <name>CITYTECH, Inc.</name>
         <url>http://www.citytechinc.com</url>
     </organization>
+
+    <url>http://citytechinc.github.io/cq-parent</url>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -70,13 +82,13 @@
             <dependency>
                 <groupId>org.osgi</groupId>
                 <artifactId>org.osgi.core</artifactId>
-				<version>4.3.0</version>
+                <version>4.3.0</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.osgi</groupId>
                 <artifactId>org.osgi.compendium</artifactId>
-				<version>4.3.0</version>
+                <version>4.3.0</version>
                 <scope>provided</scope>
             </dependency>
             <!-- JCR -->
@@ -1793,4 +1805,69 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <reportPlugins>
+                        <plugin>
+                            <artifactId>maven-project-info-reports-plugin</artifactId>
+                            <version>2.6</version>
+                            <configuration>
+                                <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+                            </configuration>
+                            <reportSets>
+                                <reportSet>
+                                    <reports>
+                                        <report>dependency-management</report>
+                                        <report>index</report>
+                                        <report>license</report>
+                                        <report>scm</report>
+                                        <report>summary</report>
+                                    </reports>
+                                </reportSet>
+                            </reportSets>
+                        </plugin>
+                    </reportPlugins>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <!-- activate when deploying GitHub site -->
+        <profile>
+            <id>github-site</id>
+            <activation>
+                <property>
+                    <name>github-site</name>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.github.github</groupId>
+                        <artifactId>site-maven-plugin</artifactId>
+                        <version>0.8</version>
+                        <configuration>
+                            <message>site for ${project.version}</message>
+                            <server>github</server>
+                            <merge>true</merge>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>site</phase>
+                                <goals>
+                                    <goal>site</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
