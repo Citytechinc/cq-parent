@@ -7,8 +7,9 @@
     <artifactId>parent</artifactId>
     <version>5.6.5-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>CITYTECH, Inc. CQ Parent POM</name>
-    <description>Parent POM for Adobe CQ projects that defines a dependency management section containing all of the
+    <name>CQ Parent POM</name>
+    <description>
+        Parent POM for Adobe CQ projects that defines a dependency management section containing all of the
         available dependencies that are provided by the CQ5 OSGi container.
     </description>
 
@@ -1515,69 +1516,4 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-site-plugin</artifactId>
-                <version>3.2</version>
-                <configuration>
-                    <reportPlugins>
-                        <plugin>
-                            <artifactId>maven-project-info-reports-plugin</artifactId>
-                            <version>2.6</version>
-                            <configuration>
-                                <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
-                            </configuration>
-                            <reportSets>
-                                <reportSet>
-                                    <reports>
-                                        <report>dependency-management</report>
-                                        <report>index</report>
-                                        <report>license</report>
-                                        <report>scm</report>
-                                        <report>summary</report>
-                                    </reports>
-                                </reportSet>
-                            </reportSets>
-                        </plugin>
-                    </reportPlugins>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-
-    <profiles>
-        <!-- activate when deploying GitHub site -->
-        <profile>
-            <id>github-site</id>
-            <activation>
-                <property>
-                    <name>github-site</name>
-                </property>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>com.github.github</groupId>
-                        <artifactId>site-maven-plugin</artifactId>
-                        <version>0.8</version>
-                        <configuration>
-                            <message>site for ${project.version}</message>
-                            <server>github</server>
-                            <merge>true</merge>
-                        </configuration>
-                        <executions>
-                            <execution>
-                                <phase>site</phase>
-                                <goals>
-                                    <goal>site</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
 </project>
