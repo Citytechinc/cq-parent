@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.citytechinc.cq</groupId>
     <artifactId>parent</artifactId>
-    <version>5.6.5-SNAPSHOT</version>
+    <version>5.6.5</version>
     <packaging>pom</packaging>
     <name>CQ Parent POM</name>
     <description>
